@@ -1,0 +1,9 @@
+{
+  "name": "@todolist/plugin-todo",
+  "private": true,
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@todolist/plugin-ui-core": "^0.0.1"
+  }
+}
