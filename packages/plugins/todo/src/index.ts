@@ -1,3 +1,3 @@
-const ui = require('@todolist/plugin-ui-core');
+export * from './types';
 
-console.log(ui());
+export { default } from './components/TodoList/TodoList';
