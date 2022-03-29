@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "start": "npm start -w @todolist/app",
-    "build": "npm build -w @todolist/app",
+    "build": "npm run build -w @todolist/app",
     "test": "npm test -ws -- --watchAll=false"
   },
   "devDependencies": {
