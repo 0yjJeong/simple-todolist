@@ -5,19 +5,18 @@ import App from './App';
 describe('App', () => {
   it("should be rendered as '/'", () => {
     render(<App />);
-    screen.getByText('Home');
+    screen.getByText('HomePage');
   });
 
   it("should be rendered as '/login'", () => {
     window.history.pushState({}, '', '/login');
     render(<App />);
-    screen.getByText('Login');
+    screen.getByText('LoginPage');
   });
 
   it('should render a todolist', () => {
-    window.history.pushState({}, '', '/a/todos');
+    window.history.pushState({}, '', '/a');
     render(<App />);
-    screen.getByText('User');
     screen.getByText('a');
     screen.getByText('b');
   });
