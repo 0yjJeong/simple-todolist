@@ -1,6 +1,6 @@
 import TodoList from '@todolist/plugin-todo';
-import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
+import Header from '../../layout/Header/Header';
 
 const todos = [
   {
@@ -19,10 +19,7 @@ const TodoListPage = () => {
   const params = useParams<{ username: string }>();
   return (
     <>
-      <Helmet>
-        <title>{`${params.username}'s Todo List`}</title>
-        <meta name='description' content='TodoListPage' />
-      </Helmet>
+      <Header title={`${params.username}'s Todo List`} />
       <TodoList todos={todos} />
     </>
   );

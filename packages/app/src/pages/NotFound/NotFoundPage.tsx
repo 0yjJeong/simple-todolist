@@ -1,12 +1,9 @@
-import { Helmet } from 'react-helmet-async';
+import Header from '../../layout/Header/Header';
 
 const NotFoundPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Not found</title>
-        <meta name='description' content='Not found' />
-      </Helmet>
+      <Header title='Not found' />
       Not found
     </>
   );

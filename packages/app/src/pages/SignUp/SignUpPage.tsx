@@ -1,12 +1,9 @@
-import { Helmet } from 'react-helmet-async';
+import Header from '../../layout/Header/Header';
 
 const SignUpPage = () => {
   return (
     <>
-      <Helmet>
-        <title>SignUpPage</title>
-        <meta name='description' content='SignUpPage' />
-      </Helmet>
+      <Header title='SignUpPage' />
       SignUpPage
     </>
   );
