@@ -7,7 +7,7 @@ const todos = [
   { id: 'b', title: 'b', checked: false },
 ];
 
-describe('TodoList', () => {
+describe('<TodoList/>', () => {
   it('should render', () => {
     render(<TodoList todos={todos} />);
     expect(screen.getByText('a')).toBeInTheDocument();
