@@ -2,8 +2,7 @@ import React, { FC } from 'react';
 import { Todo } from '../../types';
 import TodoListCard from '../TodoListCard/TodoListCard';
 import TodoListForm from '../TodoListForn/TodoListForm';
-import TodoListInner from './TodoListInner';
-import TodoListOuter from './TodoListOutert';
+import '../../style.css';
 
 type TodoListProps = {
   todos: Todo[];
@@ -11,14 +10,14 @@ type TodoListProps = {
 
 const TodoList: FC<TodoListProps> = ({ todos }) => {
   return (
-    <TodoListOuter>
+    <>
       <TodoListForm />
-      <TodoListInner>
+      <ul className='todolist__container'>
         {todos.map((todo) => (
           <TodoListCard key={todo.id} todo={todo} />
         ))}
-      </TodoListInner>
-    </TodoListOuter>
+      </ul>
+    </>
   );
 };
 
