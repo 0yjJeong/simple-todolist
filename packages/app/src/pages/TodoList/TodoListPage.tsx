@@ -20,7 +20,7 @@ const TodoListPage = () => {
   return (
     <>
       <Header title={`${params.username}'s Todo List`} />
-      <TodoList todos={todos} />
+      <TodoList initialTodos={todos} />
     </>
   );
 };

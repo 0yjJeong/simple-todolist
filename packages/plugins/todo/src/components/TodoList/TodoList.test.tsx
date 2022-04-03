@@ -9,7 +9,7 @@ const todos = [
 
 describe('<TodoList/>', () => {
   it('should render', () => {
-    render(<TodoList todos={todos} />);
+    render(<TodoList initialTodos={todos} />);
     expect(screen.getByText('a')).toBeInTheDocument();
     expect(screen.getByText('b')).toBeInTheDocument();
   });

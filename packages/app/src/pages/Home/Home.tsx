@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import TodoList from '@todolist/plugin-todo';
+import TodoList, { useTodoList } from '@todolist/plugin-todo';
 import Header from '../../layout/Header/Header';
 
 const todos = [
@@ -16,6 +16,7 @@ const todos = [
 ];
 
 const HomePage = () => {
+  const { addTodo, removeTodo, toggleTodo } = useTodoList();
   return (
     <>
       <Header title='HomePage' />
@@ -23,7 +24,12 @@ const HomePage = () => {
       <NavLink to='/signup'>
         <button>회원가입</button>
       </NavLink>
-      <TodoList todos={todos} />
+      <TodoList
+        initialTodos={todos}
+        onAddTodo={addTodo}
+        onRemoveTodo={removeTodo}
+        onToggleTodo={toggleTodo}
+      />
     </>
   );
 };

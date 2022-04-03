@@ -1,20 +1,41 @@
 import React, { FC } from 'react';
 import { Todo } from '../../types';
 import TodoListCard from '../TodoListCard/TodoListCard';
-import TodoListForm from '../TodoListForn/TodoListForm';
+import TodoListForm from '../TodoListForm/TodoListForm';
+import { useAtom } from 'jotai';
+import { todosAtom } from '../../atom/todosAtom';
 import '../../style.css';
 
 type TodoListProps = {
-  todos: Todo[];
+  initialTodos: Todo[];
+  onAddTodo?: (todo: Todo) => void | Promise<void>;
+  onRemoveTodo?: (todoId: string) => void | Promise<void>;
+  onToggleTodo?: (todoId: string) => void | Promise<void>;
 };
 
-const TodoList: FC<TodoListProps> = ({ todos }) => {
+const TodoList: FC<TodoListProps> = ({
+  initialTodos,
+  onAddTodo,
+  onRemoveTodo,
+  onToggleTodo,
+}) => {
+  const [todos, setTodos] = useAtom(todosAtom);
+
+  React.useEffect(() => {
+    setTodos(initialTodos);
+  }, []);
+
   return (
     <>
-      <TodoListForm />
+      <TodoListForm onAddTodo={onAddTodo} />
       <ul className='todolist__container'>
         {todos.map((todo) => (
-          <TodoListCard key={todo.id} todo={todo} />
+          <TodoListCard
+            key={todo.id}
+            todo={todo}
+            onRemoveTodo={onRemoveTodo}
+            onToggleTodo={onToggleTodo}
+          />
         ))}
       </ul>
     </>
