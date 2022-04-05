@@ -23,12 +23,12 @@ const TodoListCard: FC<TodoListCardProps> = ({
 
   const variation = React.useRef<number>(0);
 
-  const cardClass = classNames('todolist__card', {
+  const cardClass = classNames('todolist__card-inner', {
     'todolist__card-checked': todo.checked,
   });
 
-  const checkboxClass = classNames('todolist__checkbox', {
-    'todolist__checkbox-checked': todo.checked,
+  const checkboxClass = classNames('todolist__card-checkbox', {
+    'todolist__card-checkbox-checked': todo.checked,
   });
 
   const onRemoveTodoHandler = React.useCallback(async () => {
@@ -87,9 +87,9 @@ const TodoListCard: FC<TodoListCardProps> = ({
   });
 
   return (
-    <li className='todolist__card-wrapper'>
+    <li className='todolist__card'>
       <div
-        className='todolist__card todolist__card-remove'
+        className='todolist__card-inner todolist__card-remove'
         onClick={onRemoveTodoHandler}
       >
         <span

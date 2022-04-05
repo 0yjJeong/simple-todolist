@@ -28,7 +28,7 @@ const TodoList: FC<TodoListProps> = ({
   return (
     <>
       <TodoListForm onAddTodo={onAddTodo} />
-      <ul className='todolist__container'>
+      <ul className='todolist'>
         {todos.map((todo) => (
           <TodoListCard
             key={todo.id}
