@@ -4,28 +4,56 @@
   list-style: none;
 }
 
-.todolist__card {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  border: 1.4px solid #ededed;
-  border-radius: 16px;
-  padding-left: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.todolist__card-wrapper {
   position: relative;
-  overflow: hidden;
+  height: 50px;
+  border-radius: 10px;
   margin-bottom: 0.4rem;
 }
 
+.todolist__card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  background: #ffffff;
+  border: 1px solid #e7e7e7;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+
 .todolist__card-title {
-  margin: 0;
+  padding-left: 0.6rem;
 }
 
 .todolist__card-checked {
   background: #f6f6f6;
   border: none;
-  color: #b8b8b8;
+}
+
+.todolist__card-remove {
+  background: #ffffff;
+  color: #fb3a3a;
+  justify-content: end;
+  top: 0;
+  cursor: pointer;
+  border: none;
+}
+
+.todolist__card-remove span {
+  padding-right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.6rem;
+}
+
+.todolist__card-remove span svg {
+  font-size: 1rem;
 }
 
 .todolist__checkbox {
@@ -48,27 +76,6 @@
   background: #ededed;
   border: none;
   color: #b8b8b8;
-}
-
-.todolist__card-removebtn {
-  border: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: -90px;
-  background: #ffb8b8;
-  color: #f26d6d;
-  width: 90px;
-  display: flex;
-  gap: 0.2rem;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-.todolist__card-removebtn-active {
-  right: 0;
 }
 
 .todolist__form {
