@@ -22,24 +22,26 @@ describe('<TodoListCard/>', () => {
 
   it('should render check icon', () => {
     const rendered = render(<TodoListCard todo={checkedTodo} />);
-    const checkbox =
-      rendered.container.getElementsByClassName('todolist__checkbox')[0];
+    const checkbox = rendered.container.getElementsByClassName(
+      'todolist__card-checkbox'
+    )[0];
     expect(checkbox).toBeTruthy();
     fireEvent(
       checkbox,
       new MouseEvent('click', { bubbles: true, cancelable: true })
     );
-    expect(checkbox.classList.contains('todolist__checkbox-checked')).toBe(
+    expect(checkbox.classList.contains('todolist__card-checkbox-checked')).toBe(
       true
     );
   });
 
   it('should not render check icon', () => {
     const rendered = render(<TodoListCard todo={uncheckedTodo} />);
-    const checkbox =
-      rendered.container.getElementsByClassName('todolist__checkbox')[0];
+    const checkbox = rendered.container.getElementsByClassName(
+      'todolist__card-checkbox'
+    )[0];
     expect(checkbox).toBeTruthy();
-    expect(checkbox.classList.contains('todolist__checkbox-checked')).toBe(
+    expect(checkbox.classList.contains('todolist__card-checkbox-checked')).toBe(
       false
     );
   });
