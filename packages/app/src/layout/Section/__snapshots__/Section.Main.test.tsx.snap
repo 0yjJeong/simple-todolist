@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Section.Main/> should works 1`] = `
+.c0 {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+<div
+  class="c0"
+/>
+`;
