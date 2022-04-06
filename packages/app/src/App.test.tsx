@@ -5,7 +5,6 @@ import App from './App';
 describe('App', () => {
   it("should be rendered as '/'", () => {
     render(<App />);
-    screen.getByText('HomePage');
   });
 
   it("should be rendered as '/login'", () => {

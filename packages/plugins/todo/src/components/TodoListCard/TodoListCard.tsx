@@ -8,6 +8,7 @@ import { Todo } from '../../types';
 
 type TodoListCardProps = {
   todo: Todo;
+  fixed?: boolean;
   onRemoveTodo?: (todoId: string) => void | Promise<void>;
   onToggleTodo?: (todoId: string) => void | Promise<void>;
 };
@@ -16,6 +17,7 @@ const DELETE_BUTTON_SIZE = 60;
 
 const TodoListCard: FC<TodoListCardProps> = ({
   todo,
+  fixed = false,
   onRemoveTodo,
   onToggleTodo,
 }) => {
@@ -62,19 +64,21 @@ const TodoListCard: FC<TodoListCardProps> = ({
     const dir = direction[0] === -1 ? 'left' : 'right';
 
     api.start(() => {
-      if (dir === 'left') {
-        if (mx <= -DELETE_BUTTON_SIZE) {
-          variation.current = -DELETE_BUTTON_SIZE;
-          return { x: variation.current };
+      if (!fixed) {
+        if (dir === 'left') {
+          if (mx <= -DELETE_BUTTON_SIZE) {
+            variation.current = -DELETE_BUTTON_SIZE;
+            return { x: variation.current };
+          }
+        } else {
+          if (!down) {
+            variation.current = 0;
+          }
+          return { x: 0 };
         }
-      } else {
-        if (!down) {
-          variation.current = 0;
-        }
-        return { x: 0 };
-      }
 
-      return { x: down ? mx : 0 };
+        return { x: down ? mx : 0 };
+      }
     });
 
     if (!down) {
@@ -88,17 +92,21 @@ const TodoListCard: FC<TodoListCardProps> = ({
 
   return (
     <li className='todolist__card'>
-      <div
-        className='todolist__card-inner todolist__card-remove'
-        onClick={onRemoveTodoHandler}
-      >
-        <span
-          style={{ paddingRight: `${DELETE_BUTTON_SIZE / 2 - 16 / 2 - 10}px` }}
+      {!fixed && (
+        <div
+          className='todolist__card-inner todolist__card-remove'
+          onClick={onRemoveTodoHandler}
         >
-          <HiX />
-          삭제
-        </span>
-      </div>
+          <span
+            style={{
+              paddingRight: `${DELETE_BUTTON_SIZE / 2 - 16 / 2 - 10}px`,
+            }}
+          >
+            <HiX />
+            삭제
+          </span>
+        </div>
+      )}
       <animated.div
         {...(bind as any)()}
         style={{
