@@ -1,3 +1,4 @@
+import { Button } from '@todolist/plugin-ui-core';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -11,10 +12,10 @@ const Navbar = () => {
   return (
     <NavbarBlock>
       <NavLink to='/login'>
-        <button>로그인</button>
+        <Button>로그인</Button>
       </NavLink>
       <NavLink to='/signup'>
-        <button>회원가입</button>
+        <Button>회원가입</Button>
       </NavLink>
     </NavbarBlock>
   );

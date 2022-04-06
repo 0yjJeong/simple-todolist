@@ -1,3 +1,1 @@
-module.exports = function () {
-  return 'hello, world';
-};
+export { default as Button } from './Button/Button';

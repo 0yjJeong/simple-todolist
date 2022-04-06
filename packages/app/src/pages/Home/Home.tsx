@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import TodoList, { TodoListCard, useTodoList } from '@todolist/plugin-todo';
+import { Button } from '@todolist/plugin-ui-core';
 import Header from '../../layout/Header/Header';
 import ShadowBox from '../../components/ShadowBox/ShadowBox';
 import Typography, { Size } from '../../components/Typography/Typography';
@@ -42,7 +43,7 @@ const HomePage = () => {
           size={Size.SUB_TITLE}
         />
         <NavLink to='/signup'>
-          <button>시작하기</button>
+          <Button>시작하기</Button>
         </NavLink>
       </Section.Main>
       <Section.Pros>
