@@ -8,7 +8,7 @@ exports[`<Typography/> should render caption typo 1`] = `
 }
 
 <p
-  class="c0"
+  class="c0 typo-caption"
 >
   a
 </p>
@@ -22,7 +22,7 @@ exports[`<Typography/> should render sub-title typo 1`] = `
 }
 
 <p
-  class="c0"
+  class="c0 typo-subTitle"
 >
   a
 </p>
@@ -36,7 +36,7 @@ exports[`<Typography/> should render title typo 1`] = `
 }
 
 <p
-  class="c0"
+  class="c0 typo-title"
 >
   a
 </p>

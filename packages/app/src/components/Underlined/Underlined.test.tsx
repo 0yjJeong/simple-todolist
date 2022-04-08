@@ -5,7 +5,7 @@ import { Size } from '../Typography/Typography';
 
 describe('<Underlined/>', () => {
   it('should', () => {
-    const rendered = render(<Underlined text='a' size={Size.SUB_TITLE} />);
+    const rendered = render(<Underlined text='a' size='subTitle' />);
     expect(rendered.container.firstChild).toMatchSnapshot();
     expect(rendered.container.firstChild).toHaveStyleRule('z-index', '-1', {
       modifier: '&:before',

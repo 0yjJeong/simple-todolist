@@ -4,8 +4,8 @@ import Typography, { Size, typoStyles } from './Typography';
 
 describe('<Typography/>', () => {
   it('should render title typo', () => {
-    const styles = typoStyles[Size.TITLE];
-    const rendered = render(<Typography text='a' size={Size.TITLE} />);
+    const styles = typoStyles.title;
+    const rendered = render(<Typography text='a' size='title' />);
     expect(rendered.container.firstChild).toMatchSnapshot();
     expect(rendered.container.firstChild).toHaveStyleRule(
       'font-size',
@@ -18,8 +18,8 @@ describe('<Typography/>', () => {
   });
 
   it('should render sub-title typo', () => {
-    const styles = typoStyles[Size.SUB_TITLE];
-    const rendered = render(<Typography text='a' size={Size.SUB_TITLE} />);
+    const styles = typoStyles.subTitle;
+    const rendered = render(<Typography text='a' size='subTitle' />);
     expect(rendered.container.firstChild).toMatchSnapshot();
     expect(rendered.container.firstChild).toHaveStyleRule(
       'font-size',
@@ -32,8 +32,8 @@ describe('<Typography/>', () => {
   });
 
   it('should render caption typo', () => {
-    const styles = typoStyles[Size.CAPTION];
-    const rendered = render(<Typography text='a' size={Size.CAPTION} />);
+    const styles = typoStyles.caption;
+    const rendered = render(<Typography text='a' size='caption' />);
     expect(rendered.container.firstChild).toMatchSnapshot();
     expect(rendered.container.firstChild).toHaveStyleRule(
       'font-size',

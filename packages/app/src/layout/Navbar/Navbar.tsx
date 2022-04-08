@@ -1,11 +1,21 @@
 import { Button } from '@todolist/plugin-ui-core';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import media from '../../styles/media';
 
 const NavbarBlock = styled.nav`
   display: flex;
   justify-content: flex-end;
   height: 76px;
+  align-items: center;
+  gap: 10px;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+
+  ${media.laptop} {
+    max-width: 1600px;
+    margin: auto;
+  }
 `;
 
 const Navbar = () => {
