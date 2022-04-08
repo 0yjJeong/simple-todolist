@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ButtonBase/> should render a text button 1`] = `
+.c0 {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
+.c0:hover {
+  background: #0abf3a;
+}
+
+<button
+  class="c0"
+/>
+`;
+
+exports[`<ButtonBase/> should render an contained button 1`] = `
+.c0 {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: #ffffff;
+  background: #2ac955;
+}
+
+.c0:hover {
+  background: #0abf3a;
+}
+
+<button
+  class="c0"
+/>
+`;
+
+exports[`<ButtonBase/> should render an outlined button 1`] = `
+.c0 {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: #ffffff;
+  border: 1px solid #2ac955;
+}
+
+.c0:hover {
+  background: #0abf3a;
+}
+
+<button
+  class="c0"
+/>
+`;

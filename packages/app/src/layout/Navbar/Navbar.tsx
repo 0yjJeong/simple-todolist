@@ -12,10 +12,28 @@ const Navbar = () => {
   return (
     <NavbarBlock>
       <NavLink to='/login'>
-        <Button>로그인</Button>
+        <Button
+          variant='outlined'
+          palette={{
+            color: '#0abf3a',
+            light: '#2ac955',
+            darker: '#f0fff6',
+          }}
+        >
+          로그인
+        </Button>
       </NavLink>
       <NavLink to='/signup'>
-        <Button>회원가입</Button>
+        <Button
+          variant='contained'
+          palette={{
+            color: '#ffffff',
+            light: '#2ac955',
+            darker: '#0abf3a',
+          }}
+        >
+          회원가입
+        </Button>
       </NavLink>
     </NavbarBlock>
   );

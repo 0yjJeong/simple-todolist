@@ -43,7 +43,17 @@ const HomePage = () => {
           size={Size.SUB_TITLE}
         />
         <NavLink to='/signup'>
-          <Button>시작하기</Button>
+          <Button
+            size='large'
+            variant='contained'
+            palette={{
+              color: '#ffffff',
+              light: '#2ac955',
+              darker: '#0abf3a',
+            }}
+          >
+            시작하기
+          </Button>
         </NavLink>
       </Section.Main>
       <Section.Pros>

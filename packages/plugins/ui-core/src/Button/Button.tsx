@@ -1,16 +1,20 @@
 import React, { FC } from 'react';
-import styled from 'styled-components';
+import { ButtonType } from './types';
+import ButtonBase from '../ButtonBase/ButtonBase';
 
-const ButtonRoot = styled.button`
-  border: none;
-  background: none;
-  cursor: pointer;
-`;
-
-interface Props extends React.HTMLAttributes<HTMLButtonElement> {}
-
-const Button: FC<Props> = (props) => {
-  return <ButtonRoot {...props} />;
+const Button: FC<ButtonType> = ({
+  variant = 'contained',
+  size = 'small',
+  palette = {
+    color: '#262626',
+    light: '#f0f0f0',
+    darker: '#dbdbdb',
+  },
+  ...rest
+}) => {
+  return (
+    <ButtonBase variant={variant} size={size} palette={palette} {...rest} />
+  );
 };
 
 export default Button;
