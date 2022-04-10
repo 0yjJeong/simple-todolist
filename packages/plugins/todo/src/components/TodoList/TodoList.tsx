@@ -1,23 +1,19 @@
 import React, { FC } from 'react';
 import { Todo } from '../../types';
-import TodoListCard from '../TodoListCard/TodoListCard';
-import TodoListForm from '../TodoListForm/TodoListForm';
 import { useAtom } from 'jotai';
 import { todosAtom } from '../../atom/todosAtom';
+import CheckProvider from '../CheckBox/CheckProvider';
+import DefaultCard, { DefaultCardProps } from '../Cards/DefaultCard';
 import '../../style.css';
 
 type TodoListProps = {
   initialTodos: Todo[];
-  onAddTodo?: (todo: Todo) => void | Promise<void>;
-  onRemoveTodo?: (todoId: string) => void | Promise<void>;
-  onToggleTodo?: (todoId: string) => void | Promise<void>;
+  CardComponent?: React.ElementType<DefaultCardProps>;
 };
 
 const TodoList: FC<TodoListProps> = ({
   initialTodos,
-  onAddTodo,
-  onRemoveTodo,
-  onToggleTodo,
+  CardComponent = DefaultCard,
 }) => {
   const [todos, setTodos] = useAtom(todosAtom);
 
@@ -27,15 +23,11 @@ const TodoList: FC<TodoListProps> = ({
 
   return (
     <>
-      <TodoListForm onAddTodo={onAddTodo} />
       <ul className='todolist'>
         {todos.map((todo) => (
-          <TodoListCard
-            key={todo.id}
-            todo={todo}
-            onRemoveTodo={onRemoveTodo}
-            onToggleTodo={onToggleTodo}
-          />
+          <CheckProvider key={todo.id} checked={todo.checked}>
+            <CardComponent todo={todo} />
+          </CheckProvider>
         ))}
       </ul>
     </>
