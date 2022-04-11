@@ -3,8 +3,12 @@ import styled from 'styled-components';
 const Section = styled.div`
   position: relative;
   text-align: center;
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+
+  .cards {
+    > * {
+      margin-bottom: 10px;
+    }
+  }
 
   &:before {
     content: '';

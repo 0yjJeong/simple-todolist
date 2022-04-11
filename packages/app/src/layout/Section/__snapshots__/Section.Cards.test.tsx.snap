@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Section.Cards/> should works 1`] = `
+.c0 {
+  position: relative;
+  text-align: center;
+}
+
+.c0 .cards > * {
+  margin-bottom: 10px;
+}
+
+.c0:before {
+  content: '';
+  display: block;
+  height: 205px;
+  background: #dbffe5;
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.c0 > * {
+  margin-left: 1.4rem;
+  margin-right: 1.4rem;
+}
+
+.c0 > p {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+}
+
+<div
+  class="c0"
+/>
+`;

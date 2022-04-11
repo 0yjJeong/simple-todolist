@@ -1,12 +1,31 @@
 import { NavLink } from 'react-router-dom';
-import TodoList, { TodoListCard, useTodoList } from '@todolist/plugin-todo';
+import TodoList, { TodoListForm, useTodoList } from '@todolist/plugin-todo';
 import { Button } from '@todolist/plugin-ui-core';
 import Header from '../../layout/Header/Header';
 import ShadowBox from '../../components/ShadowBox/ShadowBox';
 import Typography from '../../components/Typography/Typography';
-import TodoWithText from '../../components/TodoWithText/TodoWithText';
 import Underlined from '../../components/Underlined/Underlined';
 import Section from '../../layout/Section';
+import { CustomCardA, CustomCardB, CustomCardC } from '../../cards/CustomCard';
+import AnimatedCard from '../../cards/AnimatedCard';
+
+const todoA = {
+  id: 'a',
+  title: '간단한 사용방법',
+  checked: false,
+};
+
+const todoB = {
+  id: 'b',
+  title: '깔끔한 디자인',
+  checked: false,
+};
+
+const todoC = {
+  id: 'c',
+  title: '다양한 스타일',
+  checked: false,
+};
 
 const todos = [
   {
@@ -32,7 +51,7 @@ const todos = [
 ];
 
 const HomePage = () => {
-  const { addTodo, removeTodo, toggleTodo } = useTodoList();
+  const { addTodo } = useTodoList();
   return (
     <>
       <Header title='HomePage' />
@@ -56,45 +75,19 @@ const HomePage = () => {
           </Button>
         </NavLink>
       </Section.Main>
-      <Section.Pros>
-        <Underlined text='이 투두리스트는...' size='subTitle' />
-        <div>
-          <TodoWithText>
-            <TodoListCard
-              fixed={true}
-              todo={{
-                id: 'a',
-                title: '사용방법이 간단합니까?',
-                checked: false,
-              }}
-            />
-            <Typography text='당연하죠!' size='caption' />
-          </TodoWithText>
-          <TodoWithText>
-            <TodoListCard
-              fixed={true}
-              todo={{ id: 'a', title: '디자인이 깔끔하나요?', checked: false }}
-            />
-            <Typography text='네!' size='caption' />
-          </TodoWithText>
-          <TodoWithText>
-            <TodoListCard
-              fixed={true}
-              todo={{ id: 'a', title: '무료인가요?', checked: false }}
-            />
-            <Typography text='물론입니다!' size='caption' />
-          </TodoWithText>
+      <Section.Cards>
+        <Underlined text='간단한 투두리스트는...' size='subTitle' />
+        <div className='cards'>
+          <CustomCardA todo={todoA} />
+          <CustomCardB todo={todoB} />
+          <CustomCardC todo={todoC} />
         </div>
-      </Section.Pros>
+      </Section.Cards>
       <Section.Try>
         <Underlined text='테스트 해보세요' size='subTitle' />
         <ShadowBox>
-          <TodoList
-            initialTodos={todos}
-            onAddTodo={addTodo}
-            onRemoveTodo={removeTodo}
-            onToggleTodo={toggleTodo}
-          />
+          <TodoListForm onAddTodo={addTodo} />
+          <TodoList initialTodos={todos} CardComponent={AnimatedCard} />
         </ShadowBox>
       </Section.Try>
     </>

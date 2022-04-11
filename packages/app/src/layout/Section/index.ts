@@ -1,6 +1,6 @@
 const Section = {
   Main: require('./Section.Main').default,
-  Pros: require('./Section.Pros').default,
+  Cards: require('./Section.Cards').default,
   Try: require('./Section.Try').default,
 };
 
