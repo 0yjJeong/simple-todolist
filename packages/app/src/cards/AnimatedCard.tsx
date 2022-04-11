@@ -43,12 +43,12 @@ const AnimatedCard = ({ todo, draggableMaxX = 42 }: Props) => {
     }
 
     api.start(() => {
-      if (direction !== [0, 0]) {
-        if (direction[0] === -1) {
-          if (mx <= -draggableMaxX) {
-            return { x: -draggableMaxX };
-          }
+      if (direction[0] === -1) {
+        if (mx <= -draggableMaxX) {
+          return { x: -draggableMaxX };
         }
+        return { x: down ? mx : 0 };
+      } else if (direction[0] === 1) {
         return { x: down ? mx : 0 };
       }
     });
