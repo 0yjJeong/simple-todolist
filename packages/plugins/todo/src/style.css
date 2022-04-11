@@ -16,7 +16,7 @@ input[type='checkbox']::before {
   height: 8px;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  background-color: #e7e7e7;
+  background: #e7e7e7;
 }
 
 input[type='checkbox']:checked::before {
@@ -29,56 +29,9 @@ input[type='checkbox']:checked::before {
   list-style: none;
 }
 
-.todolist__card {
-  position: relative;
-  height: 50px;
-  border-radius: 10px;
+.todolist li {
   margin-bottom: 0.4rem;
-  list-style: none;
-}
-
-.todolist__card-inner {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  user-select: none;
-  background: #ffffff;
-  border: 1px solid #e7e7e7;
-  box-sizing: border-box;
-  padding-left: 10px;
-  border-radius: 5px;
-}
-
-.todolist__card-title {
-  padding-left: 0.6rem;
-}
-
-.todolist__card-checked {
-  background: #f6f6f6;
-  border: none;
-}
-
-.todolist__card-remove {
-  background: #ffffff;
-  color: #fb3a3a;
-  justify-content: end;
-  top: 0;
-  cursor: pointer;
-  border: none;
-  padding-left: 0;
-}
-
-.todolist__card-remove span {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.6rem;
-}
-
-.todolist__card-remove span svg {
-  font-size: 1rem;
+  position: relative;
 }
 
 .todolist__form {
@@ -87,7 +40,7 @@ input[type='checkbox']:checked::before {
   top: 0;
   bottom: 0;
   border: none;
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 9px 0 rgb(0 0 0 / 7%);
   border-radius: 16px;
   display: flex;
   margin-bottom: 1.6rem;
