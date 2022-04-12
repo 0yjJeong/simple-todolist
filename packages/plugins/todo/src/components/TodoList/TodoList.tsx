@@ -3,13 +3,16 @@ import { Todo } from '../../types';
 import { useAtom } from 'jotai';
 import { todosAtom } from '../../atom/todosAtom';
 import CheckProvider from '../CheckBox/CheckProvider';
-import DefaultCard, { DefaultCardProps } from '../Cards/DefaultCard';
 import '../../style.css';
 
 type TodoListProps = {
   initialTodos: Todo[];
-  CardComponent?: React.ElementType<DefaultCardProps>;
+  CardComponent?: React.ElementType<{ todo: Todo }>;
 };
+
+function DefaultCard({ todo }: { todo: Todo }) {
+  return <div>{todo.title}</div>;
+}
 
 const TodoList: FC<TodoListProps> = ({
   initialTodos,
