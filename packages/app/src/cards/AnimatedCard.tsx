@@ -13,6 +13,7 @@ export type Props = {
 const AnimatedCard = ({ todo, draggableMaxX = 42 }: Props) => {
   const { removeTodo, toggleTodo } = useTodoList();
   const isDragging = React.useRef(false);
+  const dragged = React.useRef(false);
 
   const onRemoveTodoHandler = React.useCallback(async () => {
     if (removeTodo) {
@@ -35,9 +36,9 @@ const AnimatedCard = ({ todo, draggableMaxX = 42 }: Props) => {
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
 
   const bind = useDrag(({ down, direction, movement: [mx] }) => {
-    const trigger = mx < -0.2 || mx > 0.2;
-    if (trigger) {
-      if (!isDragging.current) {
+    if (!isDragging.current) {
+      const trigger = mx < -0.2 || mx > 0.2;
+      if (trigger) {
         isDragging.current = true;
       }
     }
@@ -45,11 +46,22 @@ const AnimatedCard = ({ todo, draggableMaxX = 42 }: Props) => {
     api.start(() => {
       if (direction[0] === -1) {
         if (mx <= -draggableMaxX) {
+          if (down) {
+            if (!dragged.current) {
+              dragged.current = true;
+            }
+          }
           return { x: -draggableMaxX };
         }
         return { x: down ? mx : 0 };
       } else if (direction[0] === 1) {
-        return { x: down ? mx : 0 };
+        if (dragged.current) {
+          if (down) {
+            dragged.current = false;
+            return { x: 0 };
+          }
+          return { x: mx };
+        }
       }
     });
 
