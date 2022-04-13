@@ -10,7 +10,7 @@ export type Props = {
   draggableMaxX?: number;
 };
 
-const AnimatedCard = ({ todo, draggableMaxX = 42 }: Props) => {
+const SlideToDeleteCard = ({ todo, draggableMaxX = 42 }: Props) => {
   const { removeTodo, toggleTodo } = useTodoList();
   const isDragging = React.useRef(false);
   const dragged = React.useRef(false);
@@ -99,7 +99,7 @@ const AnimatedCard = ({ todo, draggableMaxX = 42 }: Props) => {
   );
 };
 
-export default AnimatedCard;
+export default SlideToDeleteCard;
 
 const Card = styled.div<{ checked: boolean }>`
   height: 100%;

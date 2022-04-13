@@ -7,7 +7,7 @@ import Typography from '../../components/Typography/Typography';
 import Underlined from '../../components/Underlined/Underlined';
 import Section from '../../layout/Section';
 import { CustomCardA, CustomCardB, CustomCardC } from '../../cards/CustomCard';
-import AnimatedCard from '../../cards/AnimatedCard';
+import SlideToDeleteCard from '../../cards/SlideToDeleteCard';
 
 const todoA = {
   id: 'a',
@@ -87,7 +87,7 @@ const HomePage = () => {
         <Underlined text='테스트 해보세요' size='subTitle' />
         <ShadowBox>
           <TodoListForm onAddTodo={addTodo} />
-          <TodoList initialTodos={todos} CardComponent={AnimatedCard} />
+          <TodoList initialTodos={todos} CardComponent={SlideToDeleteCard} />
         </ShadowBox>
       </Section.Try>
     </>
