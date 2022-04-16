@@ -30,22 +30,22 @@ const todoC = {
 const todos = [
   {
     id: 'a',
-    title: 'a',
+    title: '강아지 산책시키기',
     checked: true,
   },
   {
     id: 'b',
-    title: 'b',
+    title: '빨래하기',
     checked: false,
   },
   {
     id: 'c',
-    title: 'c',
+    title: '숙제하기',
     checked: false,
   },
   {
     id: 'd',
-    title: 'd',
+    title: '세탁물 맡기기',
     checked: true,
   },
 ];
