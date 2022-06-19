@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ShadowBox/> works 1`] = `
-.c1 {
+.c2 {
   background: #ffffff;
   padding: 0.8rem;
   border-radius: 10px;
@@ -27,27 +27,43 @@ exports[`<ShadowBox/> works 1`] = `
   background-image: linear-gradient(to right,#ffecd2 0%,#fcb69f 100%);
 }
 
+.c1 {
+  height: calc(100% - 50px);
+  width: 100%;
+  margin: auto;
+}
+
+@media (min-width:820px) {
+  .c1 {
+    width: 600px;
+  }
+}
+
 <div
   class="c0"
 >
   <div
     class="c1"
   >
-    <form
-      class="todolist__form"
+    <div
+      class="c2"
     >
-      <input
-        placeholder="할 일을 입력하세요"
-      />
-      <button
-        type="submit"
+      <form
+        class="todolist__form"
       >
-        추가
-      </button>
-    </form>
-    <ul
-      class="todolist"
-    />
+        <input
+          placeholder="할 일을 입력하세요"
+        />
+        <button
+          type="submit"
+        >
+          추가
+        </button>
+      </form>
+      <ul
+        class="todolist"
+      />
+    </div>
   </div>
 </div>
 `;
