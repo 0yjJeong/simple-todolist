@@ -1,30 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ShadowBox/> works 1`] = `
-.c0 {
+.c1 {
   background: #ffffff;
   padding: 0.8rem;
   border-radius: 10px;
+  height: calc(100% - 100px);
   box-shadow: 0 4px 9px 0 rgb(0 0 0 / 7%);
+}
+
+.c0 {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-image: linear-gradient(to right,#ffecd2 0%,#fcb69f 100%);
 }
 
 <div
   class="c0"
 >
-  <form
-    class="todolist__form"
+  <div
+    class="c1"
   >
-    <input
-      placeholder="할 일을 입력하세요"
-    />
-    <button
-      type="submit"
+    <form
+      class="todolist__form"
     >
-      추가
-    </button>
-  </form>
-  <ul
-    class="todolist"
-  />
+      <input
+        placeholder="할 일을 입력하세요"
+      />
+      <button
+        type="submit"
+      >
+        추가
+      </button>
+    </form>
+    <ul
+      class="todolist"
+    />
+  </div>
 </div>
 `;
